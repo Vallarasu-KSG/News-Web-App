@@ -7,9 +7,9 @@ const NewsBoard = ({ category }) => {
 
   useEffect(() => {
     const fetchNews = async () => {
-      const response = await fetch(
-        `https://gnews.io/api/v4/top-headlines?category=${category}&lang=en&apikey=${process.env.REACT_APP_API_KEY}`
-      );
+    const response = await fetch(
+      `/.netlify/functions/news?category=${category}`
+    );
 
       const data = await response.json();
 
