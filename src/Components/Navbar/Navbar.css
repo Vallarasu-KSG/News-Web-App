@@ -5,8 +5,9 @@
 
 .navbar-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: left;
   align-items: center;
+  gap: 20px;
 }
 
 .logo {
@@ -43,6 +44,10 @@
 
 @media screen and (max-width: 768px) {
 
+  .navbar-container {
+    justify-content: space-between;
+    gap: 0px;
+  }
   .menu-icon {
     display: block;
   }
