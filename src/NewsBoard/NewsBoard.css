@@ -1,0 +1,29 @@
+.news-board {
+  padding: 20px;
+}
+
+.news-heading {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.news-board h2 {
+  color: black;
+}
+
+.news-heading span {
+  background-color: red;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-size: 24px;
+}
+
+.news-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
