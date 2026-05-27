@@ -5,10 +5,17 @@ import "./Navbar.css";
 const Navbar = ({ setCategory }) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const handleCategoryClick = (category) => {
+    setCategory(category);
+
+    // mobile/tablet la click panna menu close aagum
+    setMenuOpen(false);
+  };
+
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        
+
         <Link className="logo" to="/">
           NewsWeb
         </Link>
@@ -21,25 +28,27 @@ const Navbar = ({ setCategory }) => {
         </div>
 
         <ul className={menuOpen ? "nav-links active" : "nav-links"}>
-          <li onClick={() => setCategory("technology")}>
+
+          <li onClick={() => handleCategoryClick("technology")}>
             Technology
           </li>
 
-          <li onClick={() => setCategory("business")}>
+          <li onClick={() => handleCategoryClick("business")}>
             Business
           </li>
 
-          <li onClick={() => setCategory("health")}>
+          <li onClick={() => handleCategoryClick("health")}>
             Health
           </li>
 
-          <li onClick={() => setCategory("sports")}>
+          <li onClick={() => handleCategoryClick("sports")}>
             Sports
           </li>
 
-          <li onClick={() => setCategory("entertainment")}>
+          <li onClick={() => handleCategoryClick("entertainment")}>
             Entertainment
           </li>
+
         </ul>
       </div>
     </nav>
