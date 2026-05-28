@@ -31,10 +31,8 @@ This project fetches real-time news articles using the GNews API and displays th
 
 ## 📸 Screenshots
 
-*Add your screenshots here*
-
 ```md
-![Home Page](screenshot.png)
+![Home Page](./public//NW.jpeg)
 ```
 
 ---
