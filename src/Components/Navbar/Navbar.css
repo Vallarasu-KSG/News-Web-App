@@ -17,6 +17,10 @@
   font-weight: bold;
 }
 
+.logo span {
+  color: red;
+}
+
 .menu-icon {
   display: none;
   font-size: 28px;
@@ -37,7 +41,7 @@
 }
 
 .nav-links li:hover {
-  color: #00bfff;
+  color: red;
 }
 
 /* Mobile & Tablet */

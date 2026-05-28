@@ -17,7 +17,7 @@ const Navbar = ({ setCategory }) => {
       <div className="navbar-container">
 
         <Link className="logo" to="/">
-          NewsWeb
+          <span>News</span>Web
         </Link>
 
         <div

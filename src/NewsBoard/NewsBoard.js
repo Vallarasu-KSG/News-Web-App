@@ -4,16 +4,25 @@ import "./NewsBoard.css";
 
 const NewsBoard = ({ category }) => {
   const [articles, setArticles] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchNews = async () => {
-    const response = await fetch(
-      `/.netlify/functions/news?category=${category}`
-    );
+      try {
+        setLoading(true);
 
-      const data = await response.json();
+        const response = await fetch(
+          `/.netlify/functions/news?category=${category}`
+        );
 
-      setArticles(data.articles || []);
+        const data = await response.json();
+
+        setArticles(data.articles || []);
+      } catch (error) {
+        console.error("Error fetching news:", error);
+      } finally {
+        setLoading(false);
+      }
     };
 
     fetchNews();
@@ -25,17 +34,24 @@ const NewsBoard = ({ category }) => {
         Latest <span>News</span>
       </h2>
 
-      <div className="news-container">
-        {articles.map((news, index) => (
-          <NewsItem
-            key={index}
-            title={news.title}
-            description={news.description}
-            src={news.image}
-            url={news.url}
-          />
-        ))}
-      </div>
+      {loading ? (
+        <div className="loading-container">
+          <div className="loader"></div>
+          <p>Loading News...</p>
+        </div>
+      ) : (
+        <div className="news-container">
+          {articles.map((news, index) => (
+            <NewsItem
+              key={index}
+              title={news.title}
+              description={news.description}
+              src={news.image}
+              url={news.url}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 };
