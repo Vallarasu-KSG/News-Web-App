@@ -32,7 +32,7 @@ This project fetches real-time news articles using the GNews API and displays th
 ## 📸 Screenshots
 
 ```md
-![Home Page](./public//NW.jpeg)
+![Home Page](./public/NW.jpeg)
 ```
 
 ---
